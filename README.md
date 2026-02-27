@@ -2,7 +2,12 @@
 
 ## 1. Problem Understanding & Relevance
 
-In modern healthcare, delays in detecting and responding to critical changes in patient vitals can be life-threatening, especially for high-risk or remote patients. Current manual monitoring is inefficient, leading to late interventions and increased risk of adverse outcomes. Our project addresses this by providing real-time, automated remote monitoring—directly aligning with the hackathon’s healthcare focus and the demand for rapid, intelligent solutions.
+Delays in detecting changes in patient vitals are deadly, especially for high-risk or remote patients. Globally, cardiovascular diseases (CVDs) caused 19.8 million deaths in 2022 (32% of all deaths), and 19.2 million in 2023, with 85% from heart attacks and strokes. In 2023, the US saw 915,973 CVD deaths—one every 34 seconds. In India, heart attack deaths rose to 32,457 in 2022. Manual monitoring leads to late interventions. Our solution: real-time, automated remote monitoring for rapid response.
+
+## Tech stack (latest libraries)
+
+- **Backend:** Flask 3, scikit-learn (LogisticRegression for heart risk), pandas, numpy, OpenAI SDK (optional LLM summary).
+- **Frontend:** React 18, Recharts (line + scatter plots for vitals and BP), Vite, Tailwind.
 
 ## 2. Solution Approach & Design Clarity
 

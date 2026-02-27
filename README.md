@@ -1,35 +1,27 @@
-# RPM Backend – Remote Patient Monitoring (IoT) Agent
+# Remote Patient Monitoring (IoT) Agent – Hackathon 2-Minute Pitch Guide
 
-Flask API: mock IoT vitals stream, threshold-based alerts, emergency workflow.  
-See **[FLASK_PLAN.md](./FLASK_PLAN.md)** for architecture and API details.
+## 1. Problem Understanding & Relevance
 
-## Quick start
+In modern healthcare, delays in detecting and responding to critical changes in patient vitals can be life-threatening, especially for high-risk or remote patients. Current manual monitoring is inefficient, leading to late interventions and increased risk of adverse outcomes. Our project addresses this by providing real-time, automated remote monitoring—directly aligning with the hackathon’s healthcare focus and the demand for rapid, intelligent solutions.
 
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python app.py
-```
+## 2. Solution Approach & Design Clarity
 
-Runs at **http://localhost:4000**. Frontend (Vite) proxies `/api` and `/health` to this port.
+Our solution is a Python-based Remote Patient Monitoring (RPM) agent built on Flask. We create a mock IoT data stream that simulates live patient vitals such as heart rate and blood pressure. This data is processed in real-time by our backend, which continuously checks vital signs against configurable safety thresholds. If dangerous levels are detected, the system instantly triggers an emergency workflow—demonstrating end-to-end automation. All data, alerts, and controls are accessible via a REST API, enabling integration with a real-time vitals dashboard for clinicians.
 
-## Endpoints
+**Key Deliverables:**
+- **RPM agent:** Continuously ingests and analyzes vital sign data.
+- **Dashboard:** Visualizes vitals and alerts in real-time.
+- **Emergency alert demo:** Instantly notifies on threshold breaches.
+- **Config system:** Adaptable thresholds for flexible deployment.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/health` | Liveness |
-| GET | `/api/hello` | Hello (frontend compatibility) |
-| GET | `/api/vitals/latest` | Latest vital reading |
-| GET | `/api/vitals/history?limit=50` | Recent vitals for charts |
-| GET | `/api/alerts` | Recent alerts |
-| GET | `/api/thresholds` | Current thresholds |
-| PUT | `/api/thresholds` | Update thresholds (JSON body) |
-| POST | `/api/emergency/trigger` | Trigger emergency workflow (demo) |
+## 3. Innovation & Creativity
 
-## Tech stack
+- **Real-time Automation:** Immediate detection and automated action, minimizing human delay.
+- **Mock IoT Stream:** Rapid prototyping and extensibility for multiple sensor types.
+- **Threshold Configuration:** User-adjustable; supports diverse patient needs and scenarios.
+- **API-first Design:** Ready for integration with existing healthcare systems or for extension with AI-driven analytics.
 
-- Python 3.10+
-- Flask, Flask-CORS, python-dotenv
-- Mock data stream (background thread), in-memory thresholds and alerts
+## Summary
+
+This RPM agent rapidly detects high-risk health events, shortens emergency response times, and provides clinicians with always-on, real-time oversight—delivering measurable impact in just 24 hours. Our architecture is simple, scalable, and hackathon-ready for further innovations like AI integration or hardware prototyping.
+

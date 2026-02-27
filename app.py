@@ -7,7 +7,7 @@ from flask import Flask
 from flask_cors import CORS
 
 from config import Config
-from routes import main_bp, vitals_bp, alerts_bp, thresholds_bp, emergency_bp
+from routes import main_bp, vitals_bp, alerts_bp, thresholds_bp, emergency_bp, predict_bp
 from services.mock_stream import mock_stream_service
 from services.alert_engine import alert_engine
 from services.emergency_workflow import emergency_workflow
@@ -33,6 +33,7 @@ def create_app(config=None):
     app.register_blueprint(alerts_bp)
     app.register_blueprint(thresholds_bp)
     app.register_blueprint(emergency_bp)
+    app.register_blueprint(predict_bp)
     return app
 
 

@@ -1,5 +1,24 @@
 # Remote Patient Monitoring (IoT) Agent – Hackathon 2-Minute Pitch Guide
 
+## Run the backend (Ubuntu/Debian)
+
+If you see `externally-managed-environment` or `No module named 'flask'`:
+
+1. **One-time:** install the venv package (needs sudo):
+   ```bash
+   sudo apt install python3.12-venv
+   ```
+2. **One-time:** create venv and install dependencies:
+   ```bash
+   cd backend
+   ./setup_venv.sh
+   ```
+3. **Start the server:**
+   ```bash
+   ./run.sh
+   ```
+   Or: `source venv/bin/activate && python app.py`
+
 ## 1. Problem Understanding & Relevance
 
 Delays in detecting changes in patient vitals are deadly, especially for high-risk or remote patients. Globally, cardiovascular diseases (CVDs) caused 19.8 million deaths in 2022 (32% of all deaths), and 19.2 million in 2023, with 85% from heart attacks and strokes. In 2023, the US saw 915,973 CVD deaths—one every 34 seconds. In India, heart attack deaths rose to 32,457 in 2022. Manual monitoring leads to late interventions. Our solution: real-time, automated remote monitoring for rapid response.

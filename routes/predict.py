@@ -6,6 +6,7 @@ predict_bp = Blueprint("predict", __name__)
 
 
 @predict_bp.route("/predict", methods=["POST"])
+@predict_bp.route("/api/predict", methods=["POST"])
 def predict():
     """Heart attack risk prediction from form data. Returns prediction, probability, health_status, risk_percentage, optional llm_summary."""
     if not request.is_json:

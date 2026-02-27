@@ -10,6 +10,9 @@ logger = logging.getLogger(__name__)
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 OPENAI_BASE_URL = os.environ.get("OPENAI_BASE_URL")
 
+# Global to store the most recent prediction for health check/monitoring
+LATEST_RESULT = {"status": "No prediction yet"}
+
 
 def get_llm_summary(
     risk_percentage: float,
@@ -76,4 +79,8 @@ def predict(payload: dict) -> dict:
     }
     if llm_summary:
         out["llm_summary"] = llm_summary
+    
+    global LATEST_RESULT
+    LATEST_RESULT = out
+    
     return out

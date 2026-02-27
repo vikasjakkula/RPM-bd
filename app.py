@@ -7,7 +7,7 @@ from flask import Flask
 from flask_cors import CORS
 
 from config import Config
-from routes import main_bp, vitals_bp, alerts_bp, thresholds_bp, emergency_bp, predict_bp, histogram_bp
+from routes import main_bp, vitals_bp, alerts_bp, thresholds_bp, emergency_bp, predict_bp, diet_bp
 from services.mock_stream import mock_stream_service
 from services.alert_engine import alert_engine
 from services.emergency_workflow import emergency_workflow
@@ -34,7 +34,7 @@ def create_app(config=None):
     app.register_blueprint(thresholds_bp)
     app.register_blueprint(emergency_bp)
     app.register_blueprint(predict_bp)
-    app.register_blueprint(histogram_bp)
+    app.register_blueprint(diet_bp)
     return app
 
 
@@ -51,4 +51,9 @@ def ensure_stream_started():
 
 if __name__ == "__main__":
     port = Config.PORT
+    print(f"\n--- RPM Backend Starting ---")
+    print(f"Health Check: http://localhost:{port}/health")
+    print(f"API Health:   http://localhost:{port}/api/health")
+    print(f"Index:        http://localhost:{port}/")
+    print(f"----------------------------\n")
     app.run(host="0.0.0.0", port=port, debug=Config.DEBUG, threaded=True)

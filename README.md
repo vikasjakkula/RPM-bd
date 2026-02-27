@@ -26,6 +26,22 @@ Our solution is a Python-based Remote Patient Monitoring (RPM) agent built on Fl
 - **Threshold Configuration:** User-adjustable; supports diverse patient needs and scenarios.
 - **API-first Design:** Ready for integration with existing healthcare systems or for extension with AI-driven analytics.
 
+## Git sync (backend + frontend)
+
+This repo is pushed to `https://github.com/vikasjakkula/RPM-bd.git`. After committing, **push** so other devices get your changes:
+
+```bash
+git push origin main
+```
+
+On a **cloned device**, get the latest commits with:
+
+```bash
+git pull origin main
+```
+
+If you have the full RPM project, use `./scripts/push-all.sh` and `./scripts/pull-all.sh` from the project root (see `GIT_WORKFLOW.md`).
+
 ## Summary
 
 This RPM agent rapidly detects high-risk health events, shortens emergency response times, and provides clinicians with always-on, real-time oversight—delivering measurable impact in just 24 hours. Our architecture is simple, scalable, and hackathon-ready for further innovations like AI integration or hardware prototyping.
